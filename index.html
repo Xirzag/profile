@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alberto Casado Garfia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alef">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|VT323" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=0.0.4">
+</head>
+
+<body>
+    <section id="start_section">
+        <div class="container text-white title">
+            <div class="row flex-wrap-reverse">
+                <div class="col-12 col-md-11 pt-5">
+                    <h4 style="font-weight:bold;">Alberto Casado Garfia</h4>
+                </div>
+            </div>
+            <div class="row text-white" id="big_title">
+                <div class="col">
+                    <h1>I love to create new things</h1>
+                </div>
+            </div>
+            <div class="row text-white">
+                <div class="col">
+                    <h2>JUNIOR DEVELOPER</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="jams">
+        <div id="phaser-bg" class="position-absolute"></div>
+        <div class="container">
+            <div class="row pt-4 game-title">
+                <div class="col-12">
+                    <h1 class="section_title text-center">Juegos de jams en los que he participado</h1>
+                </div>
+                <div class="col text-center">
+                    <h2>Select a jam {{index + 1}}/{{jams.length}}</h2>
+                </div>
+            </div>
+            <div class="row pt-4" id="select-screen">
+                <div class="col-2 controls" v-on:click="selectJam(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="col">
+                    <div class="card bg-dark">
+                        <div class="img-top" v-bind:style="{ 'background-image': 'url(' + game.img + ')' }"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{game.title}}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{game.jam}}</h6>
+                            <p class="card-text">{{game.description}}</p>
+                            <a :href=game.url class="btn btn-primary">Ver juego</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2 controls"  v-on:click="selectJam(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <div class="container">
+            <div class="row pt-4">
+                <div class="col-12">
+                    <h2 class="section_title">Otros proyectos</h2>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            <div class="row pt-4 mb-5"  onclick="window.location = 'https://100cycdecountry.github.io/Coogle_Maps/'" >
+                <div class="col-7 left-image-project">
+                    <img src="img/CdeCoogle.png">
+                </div>
+                <div class="col">
+                    <h3>Coogle Maps</h3>
+                    <p>
+                        Una pequeña web para mandar mensajes hechos con emojis.
+                    </p>
+                </div>
+            </div>
+            <div class="row pt-4  mb-5" onclick="window.location = 'https://github.com/Xirzag/WhatsAppPetadator'" >
+                <div class="col-7 right-image-project order-md-2">
+                    <img src="img/whatsapp.png" width="200em">
+                </div>
+                <div class="col order-md-1">
+                    <h3>Whatsapp Petadator</h3>
+                    <p>
+                        Una pequeña web para mandar mensajes hechos con emojis.
+                    </p>
+                </div>
+            </div>
+            <div class="row pt-4 mb-5"  onclick="window.location = 'https://firemonkeys.itch.io/frisbee-chronicles'" >
+                <div class="col-7 left-image-project">
+                    <img src="https://img.itch.zone/aW1hZ2UvMTA4ODYwLzUxNDg3Ny5wbmc=/original/yZH6WJ.png">
+                </div>
+                <div class="col">
+                    <h3>Frisbee Chronicles</h3>
+                    <p>
+                        Juego creado en las practicas externas de PlayMedusa junto con <a href="https://github.com/MarioAbertoSeguraOliva">Mario Segura</a> donde derrotas enemigos con la ayuda de un frisbee
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center text-white">
+                    <p onclick="window.location = 'mailto:albertocasado@outlook.com'"><i class="fas fa-3x fa-envelope"></i><br />albertocasado@outlook.com</p>
+                </div>
+                <div class="col text-center text-white">
+                    <p onclick="window.location = 'https://github.com/Xirzag'"><i class="fab fa-3x fa-github"></i><br />xirzag</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.2.1/dist/phaser.js"></script>
+    <script src="js/perlin-noise-simplex.js"></script>
+    <script src="js/main.js?v=0.0.6.6"></script>
+</body>
+<!-- TODO: add https://dribbble.com/msenyil -->
+</html>

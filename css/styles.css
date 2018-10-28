@@ -1,0 +1,247 @@
+:root {
+    --color-sky: #00d4fd;
+    --color-dirt: #9a4800;
+    --color-rock: #999999;
+    --color-grass: #97e300;
+    --color-text: #3D5A99;
+    --color-b: white;
+}
+
+body{
+    font-family: Raleway, sans-serif;
+}
+
+#start_section {
+    height:100vh;
+    background-color: var(--color-sky);
+}
+
+#start_section .container .col{
+    z-index: 5;
+}
+
+
+
+.title {
+    /*font-family: Alef, sans-serif;*/
+    font-family: Raleway, sans-serif;
+    text-transform:uppercase;
+}
+
+.game-title{
+    font-family: VT323, sans-serif;
+    text-transform:uppercase;
+}
+
+#big_title {
+    margin-top:30vh;
+    font-weight:bold;
+}
+
+#big_title h1 {
+    font-weight:bold;
+}
+
+.section_title {
+    text-transform:uppercase;
+}
+
+#about {
+    font-size: 24px;
+    color: var(--color-sky);
+}
+
+#projects {
+    background-color: white;
+    color:  var(--color-text);
+}
+
+#projects section_title,
+#projects h3{
+    font-weight: bold !important;
+}
+
+.rate {
+    transform:skewX(-20deg);
+    color:green;
+}
+
+.language-btn {
+    background-size: cover;
+    width: 3em;
+    display: inline-block;
+    background: transparent no-repeat center;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0px 0px 4px darkslategrey;
+    transition: 0.3s;
+}
+
+.language-btn:hover {
+    transform: scale(1.1);
+}
+
+body{
+    margin: 0;
+    pading: 0;
+    overflow-x: hidden;
+}
+
+.block{
+    /*border: solid 2px var(--color-2);*/
+    /*box-sizing: content-box;*/
+    background-color: var(--color-dirt);
+    position: absolute;
+    z-index: 1;
+}
+
+.rock-block{
+    background-color: var(--color-rock) !important;
+}
+
+
+
+.surface-block{
+    border-top: solid 5px var(--color-grass) !important;
+}
+
+@keyframes falling-animation {
+    from {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    75%{
+        opacity: 1;
+    }
+    to {
+        transform: translateY(0vh);
+    }
+}
+
+
+.falling-block{
+    animation-name: falling-animation;
+    animation-duration: 2s;
+    /* https://matthewlein.com/tools/ceaser */
+    animation-timing-function: cubic-bezier(1.000, 0.010, 0.465, 1.005);
+    animation-fill-mode: forwards;
+    transform: translateY(-100vh);
+}
+
+#jams{
+    background-image: linear-gradient(black 20%, #100027 80%, #6b00ff);
+    /*background: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/SHUvqPx7giw9eenf2/videoblocks-blue-holographic-tron-grid-environment-motion-element-background_h1umr-axb_thumbnail-small01.jpg');*/
+    background-size: cover;
+    color: white;
+}
+
+@keyframes select-animation {
+    0%{
+        margin-top: 30vh;
+    }
+    100%{
+        margin-top: 20vh;
+    }
+}
+
+@keyframes select-card-animation {
+    0%{
+        margin-top: 10%;
+    }
+    100%{
+        margin-top: 8%;
+    }
+}
+
+#select-screen{
+    height: 90vh;
+    vertical-align: center;
+}
+
+#select-screen .controls{
+    margin-top: 30vh;
+    font-size: 10vh;
+    text-align: center;
+    animation-name: select-animation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+
+#select-screen .controls:hover{
+    transform: scale(1.2) translateY(5vh);
+}
+
+#select-screen .card{
+    /*height: 80%;*/
+    margin-top: 10%;
+    width: auto;
+    border-radius: 0;
+    animation-name: select-card-animation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    border: solid 2px white;
+}
+
+#select-screen .card-body{
+    background: black;
+    max-height: 60vh !important;
+}
+
+.img-top{
+    height: 40vh;
+    width: 100%;
+    background: #111;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#profile-photo{
+    background-size: cover;
+    background-image: url("../img/profile-photo.png");
+    background-position: top;
+    width: 5em;
+    height: 5em;
+    border-radius: 5em;
+}
+
+.left-image-project,
+.right-image-project{
+    perspective: 1000px;
+}
+.left-image-project img,
+.right-image-project img{
+    width: 100%;
+    border: solid 1px rgba(0, 212, 253, 0.15);
+}
+.left-image-project img{
+    transform: rotateY(10deg);
+}
+.right-image-project img{
+    transform: rotateY(-10deg);
+}
+
+#projects .container{
+    max-width: 900px;
+}
+
+#projects .container :not(:first-child){
+    cursor: pointer;
+}
+
+#footer{
+    background: var(--color-text);
+    width: 100%;
+    padding: 3em;
+}
+
+#footer p{
+    cursor: pointer;
+}
